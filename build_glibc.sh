@@ -38,6 +38,13 @@ make install \
   DESTDIR=`realpath ../glibc_install` \
   -j 5
 
+cd ../glibc_install
+cp -r ../linux_install/include .
+
+mkdir -p usr
+ln -s ../include usr/include
+ln -s ../lib usr/lib
+
 cd ..
 
 set +ex
