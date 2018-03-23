@@ -12,7 +12,6 @@ docker build --rm -t linux:latest - < Dockerfile
 ## Running the build process
 
 ```
-docker run -it -v $(pwd):/data linux:latest bash
-./build.sh
+time docker run --rm -it -v $(pwd):/data linux:latest ./build.sh
 qemu-system-x86_64 -m 128M -cdrom leos.iso -boot d -vga std
 ```
