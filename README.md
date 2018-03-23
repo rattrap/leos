@@ -6,7 +6,7 @@ A minimal linux distro created for educational purposes
 ## Building the image
 
 ```
-docker build -t linux:latest - < Dockerfile
+docker build --rm -t linux:latest - < Dockerfile
 ```
 
 ## Running the build process
