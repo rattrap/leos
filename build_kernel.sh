@@ -31,7 +31,7 @@ fi
 
 make -j5 bzImage
 
-cp arch/x86/boot/bzImage ../isoimage/kernel.gz
+cp arch/x86/boot/bzImage ../isoimage/kernel.xz
 cd ..
 
 set +ex
