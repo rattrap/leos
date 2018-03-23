@@ -27,12 +27,29 @@ cd glibc_build
 
 ./../glibc-$GLIBC_VERSION/configure \
   --prefix= \
-  --with-headers=../linux_install/include \
+  --with-headers=`realpath ../linux_install/include` \
   --without-gd \
   --without-selinux \
   --disable-werror
 
-cd glibc-$GLIBC_VERSION
+make -j 5
 
+make install \
+  DESTDIR=`realpath ../glibc_install` \
+  -j 5
+
+cd ..
+cd busybox-$BUSYBOX_VERSION/_install
+mkdir -p lib
+cp ../../glibc_install/lib/libnss_files.so.2 lib/libnss_files.so
+cp ../../glibc_install/lib/libresolv.so.2 lib/libresolv.so
+cp ../../glibc_install/lib/libnss_dns.so.2 lib/libnss_dns.so.2
+cd lib; ln -s libnss_dns.so.2 libnss_dns.so; cd ..
+
+set +e
+strip -g lib/*
+set -e
+
+cd ../../
 
 set +ex
