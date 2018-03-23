@@ -19,7 +19,7 @@ echo 'default kernel.xz initrd=rootfs.gz' > ./isolinux.cfg
 
 xorriso \
   -as mkisofs \
-  -o ../minimal_linux_live.iso \
+  -o ../leos.iso \
   -b isolinux.bin \
   -c boot.cat \
   -no-emul-boot \
