@@ -1,3 +1,5 @@
+/build/
+!/build/.gitkeep
 /isoimage/
 !/isoimage/isolinux.cfg
 leos.iso
