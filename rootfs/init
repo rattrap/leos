@@ -1,0 +1,8 @@
+#!/bin/sh
+echo -e "\\e[32mLe\\e[31mOS\\e[0m - v0.1"
+dmesg -n 1
+mount -t devtmpfs none /dev
+mount -t proc none /proc
+mount -t sysfs none /sys
+cat /etc/motd
+setsid cttyhack /bin/sh
