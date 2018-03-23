@@ -30,7 +30,7 @@ echo 'mount -t sysfs none /sys' >> init
 echo 'setsid cttyhack /bin/sh' >> init
 chmod +x init
 
-find . | cpio -R root:root -H newc -o | gzip > ../isoimage/rootfs.gz
+find . | cpio -R root:root -H newc -o | gzip > ../../isoimage/rootfs.gz
 
-cd ..
+cd ../../
 set +ex
