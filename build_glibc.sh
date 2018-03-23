@@ -27,7 +27,7 @@ cd glibc_build
 
 ./../glibc-$GLIBC_VERSION/configure \
   --prefix= \
-  --with-headers=../linux-$KERNEL_VERSION/include \
+  --with-headers=../linux_install/include \
   --without-gd \
   --without-selinux \
   --disable-werror

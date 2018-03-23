@@ -9,6 +9,12 @@ if [ -d linux-$KERNEL_VERSION ]; then
 	rm -rf linux-$KERNEL_VERSION
 fi
 
+if [ -d linux_install ]; then
+	rm -rf linux_install
+fi
+
+mkdir linux_install
+
 tar -xf kernel.tar.xz
 
 cd linux-$KERNEL_VERSION
@@ -32,6 +38,9 @@ fi
 make -j5 bzImage
 
 cp arch/x86/boot/bzImage ../isoimage/kernel.xz
+
+make INSTALL_HDR_PATH=`realpath ../linux_install` headers_install -j 5
+
 cd ..
 
 set +ex
