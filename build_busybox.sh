@@ -13,7 +13,9 @@ tar -xjf busybox.tar.bz2
 
 cd busybox-$BUSYBOX_VERSION
 
-make -j5 distclean defconfig
+make -j5 distclean
+make -j5 defconfig
+
 sed -i "s/.*CONFIG_STATIC.*/CONFIG_STATIC=y/" .config
 
 make -j5 busybox install
