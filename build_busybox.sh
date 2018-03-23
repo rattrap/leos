@@ -29,9 +29,9 @@ cp -Rv ../../rootfs/* .
 find . -iname ".gitkeep" -exec rm {} \;
 
 mkdir -p lib
-cp ../../glibc_install/lib/libnss_files.so.2 lib/libnss_files.so
+cp ../../glibc_install/lib/libnss_files.so.2 lib/libnss_files.so.2
 cd lib; ln -s libnss_files.so.2 libnss_files.so; cd ..
-cp ../../glibc_install/lib/libresolv.so.2 lib/libresolv.so
+cp ../../glibc_install/lib/libresolv.so.2 lib/libresolv.so.2
 cd lib; ln -s libresolv.so.2 libresolv.so; cd ..
 cp ../../glibc_install/lib/libnss_dns.so.2 lib/libnss_dns.so.2
 cd lib; ln -s libnss_dns.so.2 libnss_dns.so; cd ..
