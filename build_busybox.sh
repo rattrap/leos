@@ -22,9 +22,10 @@ make -j5 busybox install
 cd _install
 rm -f linuxrc
 
-cp -Rv ../rootfs/* .
+cp -Rv ../../rootfs/* .
+find . -iname ".gitkeep" -exec rm {} \;
 
-find . | cpio -R root:root -H newc -o | gzip > ../../isoimage/rootfs.gz
+find . | cpio -R root:root -H newc -o | xz -9 --check=none > ../../isoimage/rootfs.xz
 
 cd ../../
 set +ex

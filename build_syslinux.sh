@@ -15,7 +15,7 @@ cd isoimage
 
 cp ../syslinux-$SYSLINUX_VERSION/bios/core/isolinux.bin .
 cp ../syslinux-$SYSLINUX_VERSION/bios/com32/elflink/ldlinux/ldlinux.c32 .
-echo 'default kernel.xz initrd=rootfs.gz' > ./isolinux.cfg
+echo 'default kernel.xz quiet vga=ask initrd=rootfs.xz' > ./isolinux.cfg
 
 xorriso \
   -as mkisofs \
